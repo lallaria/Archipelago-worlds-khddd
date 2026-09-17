@@ -53,13 +53,13 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "Recusant Sigil": KHDDDItemData(
         category="Special",
         code=280_1001,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_skip_balancing, # MacGuffin
         qty=1
     ),
     "Lucky Emblem": KHDDDItemData(
         category="Special",
         code=280_1002,
-        type=ItemClassification.progression
+        type=ItemClassification.progression_deprioritized_skip_balancing, # MacGuffin
     ),
     ############################################
     ################Traps#######################
@@ -150,42 +150,42 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "La Cite des Cloches [Sora]": KHDDDItemData(
         category="World",
         code=269_1001,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 1
     ),
     "The Grid [Sora]": KHDDDItemData(
         category="World",
         code=269_1002,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 1
     ),
     "Prankster's Paradise [Sora]": KHDDDItemData(
         category="World",
         code=269_1003,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 1
     ),
     "Country of the Musketeers [Sora]": KHDDDItemData(
         category="World",
         code=269_1004,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 1
     ),
     "Symphony of Sorcery [Sora]": KHDDDItemData(
         category="World",
         code=269_1005,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 1
     ),
     "The World That Never Was [Sora]": KHDDDItemData(
         category="World",
         code=269_1006,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 1
     ),
@@ -193,42 +193,42 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "La Cite des Cloches [Riku]": KHDDDItemData(
         category="World",
         code=269_1007,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 2
     ),
     "The Grid [Riku]": KHDDDItemData(
         category="World",
         code=269_1008,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 2
     ),
     "Prankster's Paradise [Riku]": KHDDDItemData(
         category="World",
         code=269_1009,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 2
     ),
     "Country of the Musketeers [Riku]": KHDDDItemData(
         category="World",
         code=269_1010,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 2
     ),
     "Symphony of Sorcery [Riku]": KHDDDItemData(
         category="World",
         code=269_1011,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 2
     ),
     "The World That Never Was [Riku]": KHDDDItemData(
         category="World",
         code=269_1012,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 1,
         character = 2
     ),
@@ -236,14 +236,14 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "Traverse Town [Sora]": KHDDDItemData(
         category="World",
         code=269_1013,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 2,
         character = 1
     ),
     "Traverse Town [Riku]": KHDDDItemData(
         category="World",
         code=269_1014,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         qty = 2,
         character = 2
     ),
@@ -254,325 +254,325 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "Meow Wow Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1001,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_skip_balancing, # MacGuffin
         qty = 1
     ),
     "Tama Sheep Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1002,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Yoggy Ram Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1003,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Komory Bat Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1004,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_skip_balancing, # MacGuffin
         qty = 1
     ),
     "Pricklemane Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1005,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Hebby Rep Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1006,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Sir Kyroo Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1007,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Toximander Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1008,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Fin Fatale Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1009,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Tatsu Steed Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1010,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Necho Cat Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1011,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Thunderaffe Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1012,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Kooma Panda Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1013,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Pegaslick Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1014,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Icequin Ace Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1015,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Peepsta Hoo Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1016,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Escarglow Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1017,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "KO Kabuto Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1018,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Wheeflower Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1019,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Ghostabocky Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1020,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Zolephant Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1021,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Juggle Pup Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1022,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Halbird Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1023,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Staggerceps Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1024,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Fishbone Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1025,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Flowbermeow Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1026,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Cyber Yog Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1027,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Chef Kyroo Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1028,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Lord Kyroo Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1029,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Tatsu Blaze Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1030,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Electricorn Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1031,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Woeflower Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1032,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Jestabocky Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1033,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Eaglider Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1034,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Me Me Bunny Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1035,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Drill Sye Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1036,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Tyranto Rex Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1037,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Majik Lapin Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1038,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Cera Terror Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1039,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Skelterwild Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1040,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Ducky Goose Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1041,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Aura Lion Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1042,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Ryu Dragon Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1043,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Drak Quack Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1044,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Keeba Tiger Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1045,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Meowjesty Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1046,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Sudo Neku Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1047,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Frootz Cat Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1048,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Ursa Circus Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1049,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Kab Kannon Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1050,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "R & R Seal Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1051,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Catanuki Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1052,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Beatalike Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1053,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
     "Tubguin Ace Recipe": KHDDDItemData(
         category="Recipe",
         code=270_1054,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression_deprioritized,
         qty = 1
     ),
 
@@ -773,32 +773,32 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "Pole Spin": KHDDDItemData(
         category = "Flowmotion",
         code = 266_1001,
-        type=ItemClassification.progression
+        type=ItemClassification.progression | ItemClassification.useful
     ),
     "Wall Kick": KHDDDItemData(
         category = "Flowmotion",
         code = 266_1002,
-        type=ItemClassification.progression
+        type=ItemClassification.progression | ItemClassification.useful
     ),
     "Super Jump": KHDDDItemData(
         category = "Flowmotion",
         code = 266_1003,
-        type=ItemClassification.progression
+        type=ItemClassification.progression | ItemClassification.useful
     ),
     "Pole Swing": KHDDDItemData(
         category = "Flowmotion",
         code = 266_1004,
-        type=ItemClassification.progression
+        type=ItemClassification.progression | ItemClassification.useful
     ),
     "Rail Slide": KHDDDItemData(
         category = "Flowmotion",
         code = 266_1005,
-        type=ItemClassification.progression
+        type=ItemClassification.progression | ItemClassification.useful
     ),
     "Flowmotion": KHDDDItemData(
         category = "Flowmotion",
         code = 266_1006,
-        type=ItemClassification.progression
+        type=ItemClassification.progression | ItemClassification.useful
     ),
     ############################################
     ###############Movement#####################
@@ -806,7 +806,7 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "High Jump": KHDDDItemData(
         category = "Movement",
         code = 2681080,
-        type=ItemClassification.progression
+        type=ItemClassification.progression | ItemClassification.useful
     ),
     #"Dodge Roll": KHDDDItemData(
     #    category = "Movement",
@@ -828,7 +828,7 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "Air Slide": KHDDDItemData(
         category = "Movement",
         code = 2681084,
-        type=ItemClassification.progression
+        type=ItemClassification.progression | ItemClassification.useful
     ),
     "Sonic Impact": KHDDDItemData(
         category = "Movement",
@@ -843,13 +843,13 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "Glide": KHDDDItemData(
         category = "Movement",
         code = 2681087,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         character = 1
     ),
     "Superglide": KHDDDItemData(
         category = "Movement",
         code = 2681088,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         character = 1
     ),
     "Shadow Slide": KHDDDItemData(
@@ -861,7 +861,7 @@ item_data_table: Dict[str, KHDDDItemData] = {
     "Double Flight": KHDDDItemData(
         category = "Movement",
         code = 2681090,
-        type=ItemClassification.progression,
+        type=ItemClassification.progression | ItemClassification.useful,
         character = 2
     ),
 
@@ -1634,68 +1634,6 @@ item_data_table: Dict[str, KHDDDItemData] = {
 
 }
 
-SPIRITLIST:dict[str, int] = {
-    "Meow Wow":1,
-    "Tama Sheep":2,
-    "Yoggy Ram":3,
-    "Komory Bat":4,
-    "Pricklemane":5,
-    "Hebby Repp":6,
-    "Sir Kyroo":7,
-    "Toximander":8,
-    "Fin Fatale":9,
-    "Tatsu Steed":10,
-    "Necho Cat":11,
-    "Thunderaffe":12,
-    "Kooma Panda":13,
-    "Pegaslick":14,
-    "Iceguin Ace":15,
-    "Peepsta Hoo":16,
-    "Escarglow":17,
-    "KO Kabuto":18,
-    "Wheeflower":19,
-    "Ghostabocky":20,
-    "Zolephant":21,
-    "Juggle Pup":22,
-    "Halbird":23,
-    "Staggerceps":24,
-    "Fishbone":25,
-    "Flowbermeow":26,
-    "Cyber Yog":27,
-    "Chef Kyroo":28,
-    "Lord Kyroo":29,
-    "Tatsu Blaze":30,
-    "Electricorn":31,
-    "Woeflower":32,
-    "Jestabocky":33,
-    "Eaglider":34,
-    "Me Me Bunny":35,
-    "Drill Sye":36,
-    "Tyranto Rex":37,
-    "Majik Lapin":38,
-    "Cera Terror":39,
-    "Skelterwild":40,
-    "Ducky Goose":41,
-    "Aura Lion":42,
-    "Ryu Dragon":43,
-    "Drak Quack":44,
-    "Keeba Tiger":45,
-    "Meowjesty":46,
-    "Sudo Neku":47,
-    "Frootz Cat":48,
-    "Ursa Circus":49,
-    "Kab Kannon":50,
-    "R & R Seal":51,
-    "Catanuki":52,
-    "Beatalike":53,
-    "Tubguin Ace":54
-}
-
-def get_spirit_by_id(sid:int) -> str:
-    for name, val in SPIRITLIST.items():
-        if val == sid:
-            return name
-    return ""
 
 item_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
 
