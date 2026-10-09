@@ -25,7 +25,7 @@ from CommonClient import gui_enabled, logger, get_base_parser, ClientCommandProc
 def check_stdin() -> None:
     if Utils.is_windows and sys.stdin:
         print("WARNING: Console input is not routed reliably on Windows, use the GUI instead.")
-
+#Test
 class KHDDDClientCommandProcessor(ClientCommandProcessor):
 
     def __init__(self, ctx):
