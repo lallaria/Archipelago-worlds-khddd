@@ -8,7 +8,6 @@ from .Options import KHDDDOptions
 from .Regions import region_data_table, create_regions
 from .Rules import set_rules
 from worlds.LauncherComponents import Component, components, Type, launch as launch_component, icon_paths
-import random
 
 from ..generic.Rules import add_item_rule
 
@@ -32,6 +31,38 @@ class KHDDDWorld(World):
 
     def create_item(self, name: str) -> KHDDDItem:
         return KHDDDItem(name, item_data_table[name].type, item_data_table[name].code, self.player)
+
+    def __init__(self, multiworld, player):
+        super(KHDDDWorld, self).__init__(multiworld, player)
+        self.ids_for_gates = []
+        self.gate_requirements = []
+        self.recipes_in_pool = []
+
+
+    def generate_early(self): #Need to determine recipes before regions are created
+        # Add recipes to the item pool
+        self.recipes_in_pool = []
+
+        recipe_count = max(int(self.options.recipes_in_pool - 2), int(self.options.recipe_reqs - 2))
+        recipes = []
+        for name, data in get_items_by_category("Recipe").items():
+            if name != "Meow Wow Recipe" and name != "Komory Bat Recipe":
+                recipes.append(name)
+
+        # Shuffle recipes and add to item pool based on reqs
+        self.random.shuffle(recipes)
+        for x in range(recipe_count):
+            #item_pool += [self.create_item(recipes[x])]
+            self.recipes_in_pool.append(recipes[x])
+
+        #Always ensure Meow Wow and Komory Bat are in pool
+        self.recipes_in_pool.append("Meow Wow Recipe")
+        self.recipes_in_pool.append("Komory Bat Recipe")
+
+        # Retrieve ids for recipes in the pool
+        self.ids_for_gates = []
+        for x in self.recipes_in_pool:
+            self.ids_for_gates += [SPIRITLIST[x[:-7]]]
 
     def create_items(self) -> None:
         self.place_predetermined_items()
@@ -192,11 +223,11 @@ class KHDDDWorld(World):
                 #Pad out with more stats TODO: Maybe replace with filler?
                 random_stat = 0
                 if self.options.character == 0:
-                    random_stat = random.randint(0, 5)
+                    random_stat = self.random.randint(0, 5)
                 elif self.options.character == 1:
-                    random_stat = random.randint(0, 2)
+                    random_stat = self.random.randint(0, 2)
                 elif self.options.character == 2:
-                    random_stat = random.randint(3, 5)
+                    random_stat = self.random.randint(3, 5)
                 possible_level_up_item_pool.append(filler_stat_names[random_stat])
 
             self.random.shuffle(possible_level_up_item_pool)
