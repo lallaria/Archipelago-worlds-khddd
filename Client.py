@@ -174,8 +174,7 @@ class KHDDDContext(SuperContext):
 
         if cmd in {"Retrieved"} and self.energy_link_key in args["keys"]:
             self.current_energy_link_value = args["keys"][self.energy_link_key] or 0
-            if self.ui:
-                self.ui.set_new_energy_link_value()
+            self.show_energy_bars()
 
         if cmd in {"ReceivedItems"}:
             self.scout_obtained_boards()
@@ -192,8 +191,9 @@ class KHDDDContext(SuperContext):
                 new_locations = set(args["checked_locations"])
                 self.locations_checked |= new_locations
 
-        if cmd in {"SetReply"}:
-            if args["key"] == self.energy_link_key and args["slot"] == self.slot: #Response from energy link
+        if cmd in {"SetReply"} and args["key"] == self.energy_link_key:
+            self.show_energy_bars()  # CommonClient already wrote joules
+            if args["slot"] == self.slot: #Response from energy link
                 #logger.info("Requested energy link")
                 amt_got = args["original_value"] - args["value"]
                 if amt_got == 0:
@@ -336,14 +336,22 @@ class KHDDDContext(SuperContext):
 
     ##TODO: Need to figure out a good conversion rate from joules to drop meter
 
-    # Max Drop Gauge Value is 72000
     # Drop gauge value is a 4 byte float
+    MAX_DROP_GAUGE = 72000
     DP_CONVERSION_RATE = 2000000
     ENERGY_CONVERSION_RATE = 1000  # Should be 1:1000
+    BAR_ENERGY = MAX_DROP_GAUGE // 3 * ENERGY_CONVERSION_RATE  # The HUD gauge has 3 bars
 
     @property
     def energy_link_key(self) -> str:
         return f"EnergyLink{self.team}"
+
+    def show_energy_bars(self):
+        """Relabels the pool, which the common UI shows in joules, as drop gauge bars."""
+        try:
+            self.ui.energy_link_label.text = f"EL: {self.current_energy_link_value / self.BAR_ENERGY:,.1f} bars"
+        except AttributeError:  # No GUI, or Energy Link is off
+            pass
 
     async def update_energy_link(self, energy_link: bool):
         logger.info(f"Updating Energy Link to {energy_link}")
