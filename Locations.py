@@ -3662,6 +3662,14 @@ location_name_groups: Dict[str, Set[str]] = {
                                 "Tubguin Ace Node 09", "Tubguin Ace Node 10", "Tubguin Ace Node 11", "Tubguin Ace Node 12", "Tubguin Ace Node 13", "Tubguin Ace Node 14", "Tubguin Ace Node 15", "Tubguin Ace Node 16"},
 }
 
+#Boss rewards matching the 8 world flags LBoard:WorldsBeaten reads in game
+SORA_COMPLETION_LOCS = ["Traverse Town Skull Noise Reward [Sora]", "La Cite des Cloches Guardian Bell Reward [Sora]", "The Grid Dual Disc Reward [Sora]",
+                        "Prankster's Paradise Ferris Gear Reward [Sora]", "Country of the Musketeers All For One Reward [Sora]", "Symphony of Sorcery Counterpoint Reward [Sora]",
+                        "Traverse Town 2 Boss Gauntlet Reward [Sora]", "The World That Never Was Xemnas Bonus Slot 1 [Sora]"]
+RIKU_COMPLETION_LOCS = ["Traverse Town Skull Noise Reward [Riku]", "La Cite des Cloches Guardian Bell Reward [Riku]", "The Grid Dual Disc Reward [Riku]",
+                        "Prankster's Paradise Ocean's Rage Reward [Riku]", "Country of the Musketeers All For One Reward [Riku]", "Symphony of Sorcery Counterpoint Reward [Riku]",
+                        "Traverse Town 2 Knockout Punch Reward [Riku]", "The World That Never Was Ansem II Defeated [Riku]"]
+
 #Which nodes are locked behind gates
 gate_thresholds = { #First node counts starting from 0
     "Meow Wow": [7, 11],

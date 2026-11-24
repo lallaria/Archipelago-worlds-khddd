@@ -41,9 +41,14 @@ PT_MAP_INDEXES = {
     0x0A: (7, 14), #The World That Never Was
 }
 FIRST_PT_MAP_INDEX = 0 #Overworld
+LINK_BOARDS_PT_MAP_INDEX = 15
+
+showing_link_boards = False #Set by the client while its Link Board grid is showing
 
 def map_page_index(room: Any) -> int:
     """Map to show for the stored {world, room, character} value; -1 keeps the current map."""
+    if showing_link_boards: #keeps auto tab on the grid
+        return LINK_BOARDS_PT_MAP_INDEX
     if not room: #UT loads the first map before it has read data storage
         return FIRST_PT_MAP_INDEX
     try:

@@ -11,7 +11,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 
 import ModuleUpdate
-from worlds.khddd.Client_GUI import KHDDDManager, LinkBoardSearch
+from worlds.khddd.Client_GUI import KHDDDManager, LinkBoardTab
 
 ModuleUpdate.update()
 
@@ -96,7 +96,7 @@ class KHDDDContext(SuperContext):
 
     _get_items_running = False
 
-    link_board_search = None
+    link_board_tab = None
 
     def __init__(self, server_address, password):
         super(KHDDDContext, self).__init__(server_address, password)
@@ -110,11 +110,10 @@ class KHDDDContext(SuperContext):
 
     def make_gui(self):
         ui = super().make_gui()
-        ui.base_title = "Archipelago KHDDD Client"
+        ui.base_title = "Archipelago KHDDD Client | UT" if tracker_loaded else "Archipelago KHDDD Client"
         if tracker_loaded:
-            ui.base_title += f" | UT"
-            self.link_board_search = LinkBoardSearch(self)
-            self.set_callback(self.link_board_search.on_tracker_update)
+            self.link_board_tab = LinkBoardTab(self)
+            self.set_callback(self.link_board_tab.on_tracker_update)
         return ui
 
     async def server_auth(self, password_requested:bool = False):
@@ -239,8 +238,8 @@ class KHDDDContext(SuperContext):
 
 
                     pass
-            if self.link_board_search:
-                self.link_board_search.refresh()
+            if self.link_board_tab:
+                self.link_board_tab.refresh()
 
         #Send item notifications to game
         if cmd in {"PrintJSON"} and "type" in args:
@@ -319,8 +318,8 @@ class KHDDDContext(SuperContext):
             }]), name="KHDDDScoutBoard")
 
     def scout_obtained_boards(self):
-        """Scouts the boards of newly received spirits so UT's Link Boards search can match their items."""
-        if not self.link_board_search or not self.slot_data_info.get("link_board_sanity", 1):
+        """Scouts the boards of newly received spirits so UT's Link Boards grid can list their items."""
+        if not self.link_board_tab or not self.slot_data_info.get("link_board_sanity", 1):
             return
         new_boards = {RECIPE_SPIRITS[item.item] for item in self.items_received if item.item in RECIPE_SPIRITS} - self.scouted_boards
         if not new_boards:
